@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT DATA</title>
+</head>
+<body>
+    <h1>UPDATE/EDIT</h1>
+    
+    
+    <form action="/products/:id/edit" method="POST">
+        <input type="text" name="_id" value="<%=idnumber%>" >
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value=<%=item_found.name%>>
+        <label for="price">price</label>
+        <input type="text" name="price" id="price" value=<%=item_found.price%>>
+        <select name="category" >
+            <option value="fruit" 
+            <% if(item_found.category === "fruit"){%>selected <%}%> >fruit</option>
+            <option value="vegetable" <% if(item_found.category === "vegetable"){%>selected <%}%>>vegetable</option>
+            <option value="dairy" <% if(item_found.category === "dairy"){%>selected <%}%>>dairy</option>
+        </select>
+        <button>SUBMIT</button>
+    </form>
+</body>
+</html>
